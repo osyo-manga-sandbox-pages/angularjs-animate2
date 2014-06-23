@@ -56,25 +56,29 @@
         transform-origin: top;
         -webkit-transition: all 0.35s linear;
         position: relative;
-        display: block; }
+        display: block;
+        max-height: 0;
+        overflow: hidden; }
       
-      /* line 37, (__TEMPLATE__) */
+      /* line 39, (__TEMPLATE__) */
       .animate-scale.ng-enter {
         -webkit-transform: scaleY(0); }
       
-      /* line 40, (__TEMPLATE__) */
+      /* line 42, (__TEMPLATE__) */
       .animate-scale.ng-enter.ng-enter-active {
         -webkit-transform: scaleY(1); }
       
-      /* line 43, (__TEMPLATE__) */
+      /* line 45, (__TEMPLATE__) */
       .animate-scale.ng-leave {
-        -webkit-transform: scaleY(1); }
+        -webkit-transform: scaleY(1);
+        max-height: 100%; }
       
-      /* line 46, (__TEMPLATE__) */
+      /* line 49, (__TEMPLATE__) */
       .animate-scale.ng-leave.ng-leave-active {
-        -webkit-transform: scaleY(0); }
+        -webkit-transform: scaleY(0);
+        max-height: px; }
       
-      /* line 54, (__TEMPLATE__) */
+      /* line 58, (__TEMPLATE__) */
       .animate-move.ng-enter,
       .animate-move.ng-leave,
       .animate-move.ng-move {
@@ -82,37 +86,70 @@
         position: relative;
         display: block; }
       
-      /* line 60, (__TEMPLATE__) */
+      /* line 64, (__TEMPLATE__) */
       .animate-move.ng-enter {
         opacity: 0;
         top: -60; }
       
-      /* line 64, (__TEMPLATE__) */
+      /* line 68, (__TEMPLATE__) */
       .animate-move.ng-enter.ng-enter-active {
         opacity: 1;
         top: 0; }
       
-      /* line 68, (__TEMPLATE__) */
+      /* line 72, (__TEMPLATE__) */
       .animate-move.ng-leave {
         opacity: 1;
         top: 0; }
       
-      /* line 72, (__TEMPLATE__) */
+      /* line 76, (__TEMPLATE__) */
       .animate-move.ng-leave.ng-leave-active {
         opacity: 0;
         top: -60; }
       
-      /* line 76, (__TEMPLATE__) */
+      /* line 80, (__TEMPLATE__) */
       .animate-move.ng-move {
         opacity: .5; }
       
-      /* line 79, (__TEMPLATE__) */
+      /* line 83, (__TEMPLATE__) */
       .animate-move.ng-move.ng-move-active {
         opacity: 1; }
+      
+      /* line 91, (__TEMPLATE__) */
+      .animate-height.ng-enter,
+      .animate-height.ng-leave,
+      .animate-height.ng-move {
+        -webkit-transition: max-height 0.8s;
+        max-height: 0px;
+        overflow: hidden; }
+      
+      /* line 97, (__TEMPLATE__) */
+      .animate-height.ng-enter {
+        max-height: 0px; }
+      
+      /* line 100, (__TEMPLATE__) */
+      .animate-height.ng-enter.ng-enter-active {
+        max-height: 200px; }
+      
+      /* line 103, (__TEMPLATE__) */
+      .animate-height.ng-leave {
+        max-height: 200px; }
+      
+      /* line 106, (__TEMPLATE__) */
+      .animate-height.ng-leave.ng-leave-active {
+        max-height: 0px; }
     </style>
     <div class='container'>
       <br>
       <div ng-controller='AnimateDemoCtrl'>
+        <p>
+          <a class='btn btn-default' ng-click='model.height = !model.height'>
+            Toggle with [height] animation!
+          </a>
+        </p>
+        <div class='animate-height well well-small' ng-if='model.height'>
+          <p>{{ text1 }}</p>
+          <p>{{ text2 }}</p>
+        </div>
         <p>
           <a class='btn btn-default' ng-click='model.visible = !model.visible'>
             Toggle with [fadeout] animation!
