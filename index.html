@@ -1,0 +1,146 @@
+<html ng-app='MyApp'>
+  <head>
+    <title>
+      test
+    </title>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular-animate.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.min.js' type='text/javascript'></script>
+    <script src='./javascripts/script.js' type='text/javascript'></script>
+    <link href='http://netdna.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='stylesheets/style.css' rel='stylesheet'>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <script language='javascript'>
+      angular.module("MyApp", ["ui.bootstrap", "ngAnimate"]);
+    </script>
+  </head>
+  <body>
+    <style>
+      /* line 3, (__TEMPLATE__) */
+      .animate-fadeout.ng-enter,
+      .animate-fadeout.ng-leave,
+      .animate-fadeout.ng-move {
+        -webkit-transition: opacity 0.25s linear;
+        transition: opacity 0.25s linear; }
+      
+      /* line 7, (__TEMPLATE__) */
+      .animate-fadeout.ng-enter {
+        opacity: 0; }
+      
+      /* line 10, (__TEMPLATE__) */
+      .animate-fadeout.ng-enter.ng-enter-active {
+        opacity: 1; }
+      
+      /* line 13, (__TEMPLATE__) */
+      .animate-fadeout.ng-leave {
+        opacity: 1; }
+      
+      /* line 16, (__TEMPLATE__) */
+      .animate-fadeout.ng-leave.ng-leave-active {
+        opacity: 0; }
+      
+      /* line 19, (__TEMPLATE__) */
+      .animate-fadeout.ng-move {
+        opacity: .5; }
+      
+      /* line 22, (__TEMPLATE__) */
+      .animate-fadeout.ng-move.ng-move-active {
+        opacity: 1; }
+      
+      /* line 30, (__TEMPLATE__) */
+      .animate-scale.ng-enter,
+      .animate-scale.ng-leave,
+      .animate-scale.ng-move {
+        transform-origin: top;
+        -webkit-transition: all 0.35s linear;
+        position: relative;
+        display: block; }
+      
+      /* line 37, (__TEMPLATE__) */
+      .animate-scale.ng-enter {
+        -webkit-transform: scaleY(0); }
+      
+      /* line 40, (__TEMPLATE__) */
+      .animate-scale.ng-enter.ng-enter-active {
+        -webkit-transform: scaleY(1); }
+      
+      /* line 43, (__TEMPLATE__) */
+      .animate-scale.ng-leave {
+        -webkit-transform: scaleY(1); }
+      
+      /* line 46, (__TEMPLATE__) */
+      .animate-scale.ng-leave.ng-leave-active {
+        -webkit-transform: scaleY(0); }
+      
+      /* line 54, (__TEMPLATE__) */
+      .animate-move.ng-enter,
+      .animate-move.ng-leave,
+      .animate-move.ng-move {
+        -webkit-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        position: relative;
+        display: block; }
+      
+      /* line 60, (__TEMPLATE__) */
+      .animate-move.ng-enter {
+        opacity: 0;
+        top: -60; }
+      
+      /* line 64, (__TEMPLATE__) */
+      .animate-move.ng-enter.ng-enter-active {
+        opacity: 1;
+        top: 0; }
+      
+      /* line 68, (__TEMPLATE__) */
+      .animate-move.ng-leave {
+        opacity: 1;
+        top: 0; }
+      
+      /* line 72, (__TEMPLATE__) */
+      .animate-move.ng-leave.ng-leave-active {
+        opacity: 0;
+        top: -60; }
+      
+      /* line 76, (__TEMPLATE__) */
+      .animate-move.ng-move {
+        opacity: .5; }
+      
+      /* line 79, (__TEMPLATE__) */
+      .animate-move.ng-move.ng-move-active {
+        opacity: 1; }
+    </style>
+    <div class='container'>
+      <br>
+      <div ng-controller='AnimateDemoCtrl'>
+        <p>
+          <a class='btn btn-default' ng-click='model.visible = !model.visible'>
+            Toggle with [fadeout] animation!
+          </a>
+        </p>
+        <div class='animate-fadeout well well-small' ng-if='model.visible'>
+          <p>{{ text1 }}</p>
+          <p>{{ text2 }}</p>
+        </div>
+        <p>
+          <a class='btn btn-default' ng-click='model.scale = !model.scale'>
+            Toggle with [scale] animation!
+          </a>
+        </p>
+        <div class='animate-scale well well-small' ng-if='model.scale'>
+          <p>{{ text1 }}</p>
+          <p>{{ text2 }}</p>
+        </div>
+        <p>
+          <a class='btn btn-default' ng-click='model.move = !model.move'>
+            Toggle with [move] animation!
+          </a>
+        </p>
+        <div class='animate-move well well-small' ng-if='model.move'>
+          <p>{{ text1 }}</p>
+          <p>{{ text2 }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
