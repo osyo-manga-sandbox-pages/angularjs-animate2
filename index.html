@@ -146,9 +146,11 @@
             Toggle with [height] animation!
           </a>
         </p>
-        <div class='animate-height well well-small' ng-if='model.height'>
-          <p>{{ text1 }}</p>
-          <p>{{ text2 }}</p>
+        <div class='animate-height' ng-if='model.height'>
+          <div class='well well-small'>
+            <p>{{ text1 }}</p>
+            <p>{{ text2 }}</p>
+          </div>
         </div>
         <p>
           <a class='btn btn-default' ng-click='model.visible = !model.visible'>
